@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script2.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <a href="inicio.html" class="logo">
+            <span>YOUR</span>TIME</a>
+
+            <input type="checkbox" id="menu-bar">
+            <label for="menu-bar" class="fa fa-bars"> </label>
+
+            <nav class="navbar">
+                <a href="inicio.html">Inicio</a>
+                <a href="calendario.html">Calendario</a>
+                <a href="notas.html">Notas</a>
+            </nav>
+    </header><br><br><br><br><br><br>
+
+    <div class="list roundBorder">
+        <div class="date">
+            <div class="dateRight">
+                <div id="dateNumber"></div>
+                <div>
+                    <div id="dateMonth"></div>
+                    <div id="dateYear"></div>
+                </div>
+            </div>
+            <div id="dateText"></div>
+        </div>
+        <form onsubmit="addNewTask(event)" >
+            <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder">
+            <button type="submit" class="addTaskButton">+</button>
+            <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
+        </form>
+        <div id="tasksContainer"></div>
+        <!-- Botón para borrar los datos -->
+        <button type="button"  class="orderButton" onclick="clearTasksContainer()">Borrar Todo</button>
+    </div>
+
+    <script>
+        // Función para vaciar el contenido del elemento con id "tasksContainer"
+        function clearTasksContainer() {
+            var tasksContainer = document.getElementById("tasksContainer");
+            tasksContainer.innerHTML = ""; // Esto vacía el contenido del contenedor
+        }
+    </script>
+    </div>
+
+    
+    
+
+</body>
+</html>
